@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/27 00:33:27 by khhammou         ###   ########.fr       */
+/*   Updated: 2026/01/27 14:24:26 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,32 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include "libft/libft.h"
 
+typedef enum e_strategy
+{
+    SIMPLE,
+    MEDIUM,
+    COMPLEX,
+    ADAPTIVE
+}   t_strategy;
+
+typedef struct s_node
+{
+    int             value;
+    int             rank;
+    struct s_node   *next;
+}   t_node;
+
+typedef struct s_flags
+{
+    t_strategy  strategy;
+    int         bench;
+    int         num_start;
+}   t_flags;
+
+t_flags parse_flags(int argc, char **argv);
+void    print_error(void);
+int     ft_strcmp(const char *s1, const char *s2);
 
 #endif
