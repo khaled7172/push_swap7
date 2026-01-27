@@ -6,11 +6,13 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 14:07:33 by kali              #+#    #+#             */
-/*   Updated: 2026/01/27 14:09:25 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/27 16:38:08 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strcmp_safe(const char *s1, const char *s2)
+#include "push_swap.h"
+
+int ft_strcmp(const char *s1, const char *s2)
 {
     int i;
 

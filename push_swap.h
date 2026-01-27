@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/27 14:24:26 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/27 18:34:13 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ typedef struct s_flags
 t_flags parse_flags(int argc, char **argv);
 void    print_error(void);
 int     ft_strcmp(const char *s1, const char *s2);
+int     *parse_numbers(char **argv, int start, int *count);
+int     is_valid_number(char *str);
+int     has_duplicates(int *arr, int size);
 
 #endif

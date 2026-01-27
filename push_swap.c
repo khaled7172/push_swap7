@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 13:23:40 by kali              #+#    #+#             */
-/*   Updated: 2026/01/27 14:23:01 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/27 18:33:21 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 int main(int ac, char **av)
 {
     t_flags flags;
+    int     count;
+    int     *numbers;
     
     if (ac < 2)
         return (0);//not passing args so not output but not error either
     flags = parse_flags(ac, av);
-    
-    // For now, just test if it works
-    ft_printf("Strategy: %d\n", flags.strategy);
-    ft_printf("Bench: %d\n", flags.bench);
-    ft_printf("Numbers start at: %d\n", flags.num_start);
-    
+    if (flags.num_start >= ac)
+        return (0);
+    numbers = parse_numbers(av, flags.num_start, &count);
+    for (int i =0; i < count; i++)
+        ft_printf("Number %d: %d\n", i, numbers[i]);
+    free(numbers);
     return (0);
 }
