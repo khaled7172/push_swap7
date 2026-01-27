@@ -6,13 +6,13 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 14:12:09 by kali              #+#    #+#             */
-/*   Updated: 2026/01/27 17:30:50 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/27 19:58:15 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_flag(char *str);
+int	check_flag(char *str);
 
 t_flags parse_flags(int ac, char **av)
 {
@@ -26,7 +26,7 @@ t_flags parse_flags(int ac, char **av)
     i = 1;
     while (i < ac && av[i][0] == '-' && av[i][1] == '-')
     {
-        strat = check_flag(av[i]);
+		        strat = check_flag(av[i]);
         if (strat != -1)
             flags.strategy = strat;
         else if (ft_strcmp(av[i], "--bench") == 0)

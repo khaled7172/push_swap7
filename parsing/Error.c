@@ -6,13 +6,13 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 14:05:48 by kali              #+#    #+#             */
-/*   Updated: 2026/01/27 16:38:17 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/27 19:42:34 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    print_error(void)
+void	print_error(void)
 {
-    write(2, "Error\n", 6);
+	write(2, "Error\n", 6);
 }
