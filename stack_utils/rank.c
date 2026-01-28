@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 20:22:56 by kali              #+#    #+#             */
-/*   Updated: 2026/01/28 20:52:17 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/28 20:55:07 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,13 @@ void	assign_ranks(t_node *stack, int size)
 }
 void sort_array(int *arr, int size)
 {
-    int i = 0;
+    int i;
+	int	j;
+	
+	i = 0;
     while (i < size - 1)
     {
-        int j = i + 1;
+        j = i + 1;
         while (j < size)
         {
             if (arr[i] > arr[j])
