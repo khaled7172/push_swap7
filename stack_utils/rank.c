@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 20:22:56 by kali              #+#    #+#             */
-/*   Updated: 2026/01/28 20:55:07 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/28 20:56:50 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void sort_array(int *arr, int size)
 {
     int i;
 	int	j;
-	
+	int	tmp;
 	i = 0;
     while (i < size - 1)
     {
@@ -53,7 +53,7 @@ void sort_array(int *arr, int size)
         {
             if (arr[i] > arr[j])
             {
-                int tmp = arr[i];
+                tmp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = tmp;
             }
