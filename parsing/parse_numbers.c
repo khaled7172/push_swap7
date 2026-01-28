@@ -6,12 +6,31 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 18:07:13 by kali              #+#    #+#             */
-/*   Updated: 2026/01/28 16:12:01 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/28 21:17:13 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static long	convert_digits(char *str, int start, int *error)
+{
+	long	result;
+	int		i;
+
+	result = 0;
+	i = start;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		if (result > (INT_MAX - (str[i] - '0')) / 10)
+		{
+			*error = 1;
+			return (0);
+		}
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result);
+}
 int count_numbers(char **av, int start)
 {
     int total;
@@ -130,22 +149,4 @@ void	free_split(char **split)
 	}
 	free(split);
 }
-static long	convert_digits(char *str, int start, int *error)
-{
-	long	result;
-	int		i;
 
-	result = 0;
-	i = start;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		if (result > (INT_MAX - (str[i] - '0')) / 10)
-		{
-			*error = 1;
-			return (0);
-		}
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result);
-}
