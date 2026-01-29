@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 18:07:13 by kali              #+#    #+#             */
-/*   Updated: 2026/01/28 21:17:13 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/30 01:22:41 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ static long	convert_digits(char *str, int start, int *error)
 	}
 	return (result);
 }
-int count_numbers(char **av, int start)
+
+int	count_numbers(char **av, int start)
 {
     int total;
 	int i;

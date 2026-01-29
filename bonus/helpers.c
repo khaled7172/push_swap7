@@ -3,74 +3,74 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 20:20:17 by kali              #+#    #+#             */
-/*   Updated: 2026/01/29 20:22:46 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/30 01:34:49 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap_no_print(t_node **stack)
+void	swap_no_print(t_node **stack)
 {
-    t_node *first;
-    t_node *second;
-    
-    if (!*stack || !(*stack)->next)
-        return;
-    first = *stack;
-    second = first->next;
-    first->next = second->next;
-    second->next = first;
-    *stack = second;
+	t_node	*first;
+	t_node	*second;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	first = *stack;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	*stack = second;
 }
 
-void push_no_print(t_node **dest, t_node **src)
+void	push_no_print(t_node **dest, t_node **src)
 {
-    t_node *tmp;
-    
-    if (!*src)
-        return;
-    tmp = *src;
-    *src = (*src)->next;
-    tmp->next = *dest;
-    *dest = tmp;
+	t_node	*tmp;
+
+	if (!*src)
+		return ;
+	tmp = *src;
+	*src = (*src)->next;
+	tmp->next = *dest;
+	*dest = tmp;
 }
 
-void rotate_no_print(t_node **stack)
+void	rotate_no_print(t_node **stack)
 {
-    t_node *first;
-    t_node *last;
-    
-    if (!*stack || !(*stack)->next)
-        return;
-    first = *stack;
-    last = *stack;
-    while (last->next)
-        last = last->next;
-    *stack = first->next;
-    first->next = NULL;
-    last->next = first;
+	t_node	*first;
+	t_node	*last;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	first = *stack;
+	last = *stack;
+	while (last->next)
+		last = last->next;
+	*stack = first->next;
+	first->next = NULL;
+	last->next = first;
 }
 
-void reverse_rotate_no_print(t_node **stack)
+void	reverse_rotate_no_print(t_node **stack)
 {
-    t_node *last;
-    t_node *second_last;
-    
-    if (!*stack || !(*stack)->next)
-        return;
-    last = *stack;
-    second_last = NULL;
-    while (last->next)
-    {
-        second_last = last;
-        last = last->next;
-    }
-    second_last->next = NULL;
-    last->next = *stack;
-    *stack = last;
+	t_node	*last;
+	t_node	*second_last;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	last = *stack;
+	second_last = NULL;
+	while (last->next)
+	{
+		second_last = last;
+		last = last->next;
+	}
+	second_last->next = NULL;
+	last->next = *stack;
+	*stack = last;
 }
 /*
 To test checker:
