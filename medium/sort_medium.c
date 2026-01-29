@@ -3,16 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   sort_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 20:11:36 by kali              #+#    #+#             */
-/*   Updated: 2026/01/30 01:39:09 by khhammou         ###   ########.fr       */
+/*   Updated: 2026/01/30 01:42:01 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
+static int calculate_chunk_size(int size)
+{
+    int chunk_size;
+    int i;
+    
+    i = 1;
+    while (i * i < size)
+        i++;
+    chunk_size = i;
+    if (chunk_size < 1)
+        chunk_size = 1;
+    return (chunk_size);
+}
 
 static int is_in_chunk(int rank, int chunk_num, int chunk_size)
 {
