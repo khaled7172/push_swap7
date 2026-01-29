@@ -1,7 +1,7 @@
 
 NAME = push_swap
 
-SRCS = push_swap.c parsing/parse_flags.c parsing/Error.c parsing/ft_strcmp.c parsing/parse_numbers.c parsing/new_parse_logic.c stack_utils/rank.c stack_utils/util.c
+SRCS = push_swap.c parsing/parse_flags.c parsing/Error.c parsing/ft_strcmp.c parsing/parse_numbers.c parsing/new_parse_logic.c stack_utils/rank.c stack_utils/util.c stack_utils/disorder.c
 OBJS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

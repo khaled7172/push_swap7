@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/28 21:12:00 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/29 02:06:06 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,17 @@ int		ft_atoi_safe(char *str, int *error);
 int		has_spaces(char *str);
 void	free_split(char **split);
 int		check_flag(char *str);
+double	calculate_disorder(t_node *stack);
+void	sa(t_node **a);
+void	sb(t_node **b);
+void	ss(t_node **a, t_node **b);
+void	pa(t_node **a, t_node **b);
+void	pb(t_node **a, t_node **b);
+void	ra(t_node **a);
+void	rb(t_node **b);
+void	rr(t_node **a, t_node **b);
+void	rra(t_node **a);
+void	rrb(t_node **b);
+void	rrr(t_node **a, t_node **b);
 
 #endif
