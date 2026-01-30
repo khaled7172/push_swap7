@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 02:20:03 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/30 02:20:09 by khhammou         ###   ########.fr       */
+/*   Created: 2026/01/30 02:59:18 by khhammou          #+#    #+#             */
+/*   Updated: 2026/01/30 02:59:20 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void	execute_reverse_rotate(char *op, t_node **a, t_node **b)
 	}
 }
 
-static void	execute_operation(char *op, t_node **a, t_node **b)
+void	execute_operation(char *op, t_node **a, t_node **b)
 {
 	execute_swap_push(op, a, b);
 	execute_rotate(op, a, b);
@@ -71,7 +71,7 @@ static void	execute_operation(char *op, t_node **a, t_node **b)
 	}
 }
 
-static int	is_sorted(t_node *stack)
+int	is_sorted(t_node *stack)
 {
 	while (stack && stack->next)
 	{
