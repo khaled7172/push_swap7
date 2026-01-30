@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 13:23:40 by kali              #+#    #+#             */
-/*   Updated: 2026/01/30 03:03:29 by khhammou         ###   ########.fr       */
+/*   Updated: 2026/01/30 21:13:37 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	main(int argc, char **argv)
 		return (0);
 	init_stacks(argv, flags, &stack_a, &stack_b);
 	disorder = calculate_disorder(stack_a);
+	if (flags.bench)
+		print_benchmark(disorder, flags);
 	execute_sort(&stack_a, &stack_b, flags, disorder);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
