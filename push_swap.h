@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/30 02:37:43 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/30 02:40:31 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,59 +70,5 @@ void	rr(t_node **a, t_node **b);
 void	rra(t_node **a);
 void	rrb(t_node **b);
 void	rrr(t_node **a, t_node **b);
-// ============= PARSING =============
-t_flags     parse_flags(int argc, char **argv);
-int         *parse_numbers(char **av, int start, int *count);
-int         count_numbers(char **av, int start);
-int         is_valid_number(char *str);
-int         ft_atoi_safe(char *str, int *error);
-int         has_duplicates(int *arr, int size);
-int         has_spaces(char *str);
-void        free_split(char **split);
-void        print_error(void);
-
-// ============= STACK BUILDING =============
-t_node      *create_node(int value);
-void        add_node_back(t_node **head, t_node *new);
-t_node      *build_stack(int *numbers, int count);
-void        assign_ranks(t_node *stack, int size);
-void        sort_array(int *arr, int size);
-
-// ============= STACK UTILITIES =============
-int         stack_size(t_node *stack);
-void        free_stack(t_node **stack);
-int         is_sorted(t_node *stack);
-
-// ============= DISORDER =============
-double      calculate_disorder(t_node *stack);
-
-// ============= OPERATIONS =============
-void        sa(t_node **a);
-void        sb(t_node **b);
-void        ss(t_node **a, t_node **b);
-void        pa(t_node **a, t_node **b);
-void        pb(t_node **a, t_node **b);
-void        ra(t_node **a);
-void        rb(t_node **b);
-void        rr(t_node **a, t_node **b);
-void        rra(t_node **a);
-void        rrb(t_node **b);
-void        rrr(t_node **a, t_node **b);
-
-// ============= OPERATIONS (NO PRINT) =============
-void        swap_no_print(t_node **stack);
-void        push_no_print(t_node **dest, t_node **src);
-void        rotate_no_print(t_node **stack);
-void        reverse_rotate_no_print(t_node **stack);
-
-// ============= SORTING ALGORITHMS =============
-void        sort_simple(t_node **a, t_node **b);
-void        sort_medium(t_node **a, t_node **b);
-void        sort_complex(t_node **a, t_node **b);
-void        sort_adaptive(t_node **a, t_node **b, double disorder);
-
-// ============= BENCHMARK =============
-void        print_benchmark(double disorder, t_flags flags);
-
 
 #endif
