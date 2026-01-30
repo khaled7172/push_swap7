@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 20:18:50 by kali              #+#    #+#             */
-/*   Updated: 2026/01/30 01:13:14 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/30 03:49:30 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	print_benchmark(double disorder, t_flags flags)
 
 	whole = (int)(disorder * 100);
 	frac = (int)((disorder * 100 - whole) * 100);
-	ft_fprintf(2, "Disorder: %d.%d%%\n", whole, frac);
+	ft_printf("Disorder: %d.%d%%\n", whole, frac);
 	print_strategy_name(flags.strategy);
 	print_complexity(flags.strategy, disorder);
 }

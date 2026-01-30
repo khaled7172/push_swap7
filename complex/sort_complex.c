@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   sort_complex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 20:13:15 by kali              #+#    #+#             */
-/*   Updated: 2026/01/30 01:16:49 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/30 03:44:57 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	get_bit(int num, int bit_pos)
+{
+	return ((num >> bit_pos) & 1);
+}
 
 static int	get_max_bits(int size)
 {
@@ -62,9 +67,4 @@ void	sort_complex(t_node **a, t_node **b)
 		radix_sort_bit(a, b, bit);
 		bit++;
 	}
-}
-
-static int	get_bit(int num, int bit_pos)
-{
-	return ((num >> bit_pos) & 1);
 }

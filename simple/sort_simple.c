@@ -6,7 +6,7 @@
 /*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 02:05:23 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/30 02:05:53 by khhammou         ###   ########.fr       */
+/*   Updated: 2026/01/30 03:56:32 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	find_min_position(t_node *stack)
 	return (min_pos);
 }
 
-static void	rotate_to_top(t_node **stack, int pos, int size)
+void	rotate_to_top(t_node **stack, int pos, int size)
 {
 	int	rotations;
 
@@ -95,11 +95,13 @@ void	sort_simple(t_node **a, t_node **b)
 	int	pushed;
 
 	size = stack_size(*a);
+	if (is_sorted(*a))
+		return ;
 	pushed = 0;
 	while (size - pushed > 3)
 	{
 		min_pos = find_min_position(*a);
-		rotate_to_top(a, min_pos, size - pushed);
+		rotate_to_top_a(a, min_pos, size - pushed);
 		pb(a, b);
 		pushed++;
 	}

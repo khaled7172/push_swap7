@@ -6,7 +6,7 @@
 /*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/30 03:00:46 by khhammou         ###   ########.fr       */
+/*   Updated: 2026/01/30 03:52:52 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	add_node_back(t_node **head, t_node *new);
 t_node	*build_stack(int *numbers, int count);
 void	free_stack(t_node **stack);
 int		stack_size(t_node *stack);
+void	rotate_to_top(t_node **stack, int pos, int size);
 
 /* Sorting Operations */
 void	sa(t_node **a);
@@ -97,5 +98,8 @@ int		is_sorted(t_node *stack);
 
 /* Benchmark */
 void	print_benchmark(double disorder, t_flags flags);
+void	rotate_to_top_a(t_node **a, int pos, int size);
+void	rotate_to_top_b(t_node **b, int pos, int size);
+int		is_sorted(t_node *stack);
 
 #endif

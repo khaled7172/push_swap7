@@ -12,15 +12,13 @@ SRCS = parsing/parse_flags.c \
        stack_utils/util.c \
        stack_utils/disorder.c \
        simple/sort_simple.c \
+	   simple/sort_simple_utils.c \
        operations/operations.c \
        operations/reverse_operations.c \
        operations/stack_helpers.c \
        medium/medium_utils.c \
        medium/sort_medium.c \
        complex/sort_complex.c \
-       bonus/checker.c \
-       bonus/helpers.c \
-       bonus/checker_main.c \
        bench/benchmark.c \
        adaptive.c \
        push_swap.c
