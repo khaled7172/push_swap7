@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rank.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 20:22:56 by kali              #+#    #+#             */
-/*   Updated: 2026/01/28 20:56:50 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/30 02:06:54 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	assign_ranks(t_node *stack, int size)
 
 	sorted = malloc(sizeof(int) * size);
 	if (!sorted)
-		return;
+		return ;
 	current = stack;
 	i = 0;
 	while (current)
@@ -40,26 +40,27 @@ void	assign_ranks(t_node *stack, int size)
 	}
 	free(sorted);
 }
-void sort_array(int *arr, int size)
+
+void	sort_array(int *arr, int size)
 {
-    int i;
+	int	i;
 	int	j;
 	int	tmp;
-	i = 0;
-    while (i < size - 1)
-    {
-        j = i + 1;
-        while (j < size)
-        {
-            if (arr[i] > arr[j])
-            {
-                tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
-            }
-            j++;
-        }
-        i++;
-    }
-}
 
+	i = 0;
+	while (i < size - 1)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (arr[i] > arr[j])
+			{
+				tmp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+}

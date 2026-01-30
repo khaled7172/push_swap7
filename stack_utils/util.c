@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:43:07 by kali              #+#    #+#             */
-/*   Updated: 2026/01/28 20:22:39 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/30 02:07:47 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_node	*create_node(int value)
 {
 	t_node	*node;
-	
+
 	node = malloc(sizeof(*node));
 	if (!node)
 		return (NULL);
@@ -23,22 +23,23 @@ t_node	*create_node(int value)
 	node->rank = 0;
 	node->next = NULL;
 	return (node);
-	
 }
-void add_node_back(t_node **head, t_node *new)
+
+void	add_node_back(t_node **head, t_node *new)
 {
 	t_node	*current;
 
 	if (*head == NULL)
 	{
 		*head = new;
-		return;
+		return ;
 	}
 	current = *head;
 	while (current->next != NULL)
 		current = current->next;
 	current->next = new;
 }
+
 t_node	*build_stack(int *numbers, int count)
 {
 	t_node	*stack;
@@ -60,10 +61,11 @@ t_node	*build_stack(int *numbers, int count)
 	}
 	return (stack);
 }
+
 int	stack_size(t_node *stack)
 {
 	int	count;
-	
+
 	count = 0;
 	while (stack)
 	{
@@ -72,13 +74,14 @@ int	stack_size(t_node *stack)
 	}
 	return (count);
 }
+
 void	free_stack(t_node **stack)
 {
 	t_node	*current;
 	t_node	*next;
 
 	if (!stack || !*stack)
-		return;
+		return ;
 	current = *stack;
 	while (current)
 	{

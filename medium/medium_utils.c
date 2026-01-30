@@ -1,40 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   disorder.c                                         :+:      :+:    :+:   */
+/*   medium_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/28 21:20:04 by kali              #+#    #+#             */
-/*   Updated: 2026/01/30 02:06:30 by khhammou         ###   ########.fr       */
+/*   Created: 2026/01/30 01:59:02 by khhammou          #+#    #+#             */
+/*   Updated: 2026/01/30 02:00:53 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-double	calculate_disorder(t_node *stack)
+int	calculate_chunk_size(int size)
+{
+	int	chunk_size;
+	int	i;
+
+	i = 1;
+	while (i * i < size)
+		i++;
+	chunk_size = i;
+	if (chunk_size < 1)
+		chunk_size = 1;
+	return (chunk_size);
+}
+
+int	find_max_position(t_node *stack)
 {
 	t_node	*current;
-	t_node	*runner;
-	int		inversions;
-	int		total_pairs;
+	int		max;
+	int		pos;
+	int		max_pos;
 
-	inversions = 0;
-	total_pairs = 0;
 	current = stack;
+	max = current->value;
+	pos = 0;
+	max_pos = 0;
 	while (current)
 	{
-		runner = current->next;
-		while (runner)
+		if (current->value > max)
 		{
-			total_pairs++;
-			if (current->value > runner->value)
-				inversions++;
-			runner = runner->next;
+			max = current->value;
+			max_pos = pos;
 		}
 		current = current->next;
+		pos++;
 	}
-	if (total_pairs == 0)
-		return (0.0);
-	return ((double)inversions / total_pairs);
+	return (max_pos);
 }

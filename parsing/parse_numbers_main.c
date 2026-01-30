@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   adaptive.c                                         :+:      :+:    :+:   */
+/*   parse_numbers_main.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 20:17:37 by kali              #+#    #+#             */
-/*   Updated: 2026/01/30 02:08:13 by khhammou         ###   ########.fr       */
+/*   Created: 2026/01/30 02:14:33 by khhammou          #+#    #+#             */
+/*   Updated: 2026/01/30 02:14:39 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_adaptive(t_node **a, t_node **b, double disorder)
+int	*parse_numbers(char **av, int start, int *count)
 {
-	if (disorder < 0.2)
-		sort_simple(a, b);
-	else if (disorder < 0.5)
-		sort_medium(a, b);
-	else
-		sort_complex(a, b);
+	int	*numbers;
+	int	total;
+
+	total = count_numbers(av, start);
+	numbers = malloc(sizeof(int) * total);
+	if (!numbers)
+		return (NULL);
+	fill_numbers(av, start, numbers);
+	if (has_duplicates(numbers, total))
+	{
+		free(numbers);
+		print_error();
+		exit(1);
+	}
+	*count = total;
+	return (numbers);
 }

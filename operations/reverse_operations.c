@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_operations.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 02:22:25 by kali              #+#    #+#             */
-/*   Updated: 2026/01/29 02:42:39 by kali             ###   ########.fr       */
+/*   Created: 2026/01/30 02:02:12 by khhammou          #+#    #+#             */
+/*   Updated: 2026/01/30 02:02:29 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 void	pb(t_node **a, t_node **b)
 {
 	t_node	*tmp;
-	
+
 	if (!*a)
-		return;
+		return ;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = *b;
 	*b = tmp;
 	ft_printf("pb\n");
-	
 }
 
 void	ra(t_node **a)
@@ -32,7 +31,7 @@ void	ra(t_node **a)
 	t_node	*last;
 
 	if (!*a || !(*a)->next)
-		return;
+		return ;
 	first = *a;
 	last = *a;
 	while (last->next)
@@ -42,13 +41,14 @@ void	ra(t_node **a)
 	last->next = first;
 	ft_printf("ra\n");
 }
+
 void	rb(t_node **b)
 {
 	t_node	*first;
 	t_node	*last;
 
 	if (!*b || !(*b)->next)
-		return;
+		return ;
 	first = *b;
 	last = *b;
 	while (last->next)
@@ -58,13 +58,14 @@ void	rb(t_node **b)
 	last->next = first;
 	ft_printf("rb\n");
 }
+
 void	rra(t_node **a)
 {
 	t_node	*last;
 	t_node	*second_last;
-	
+
 	if (!*a || !(*a)->next)
-		return;
+		return ;
 	last = *a;
 	second_last = NULL;
 	while (last->next)
@@ -77,13 +78,14 @@ void	rra(t_node **a)
 	*a = last;
 	ft_printf("rra\n");
 }
+
 void	rrb(t_node **b)
 {
 	t_node	*last;
 	t_node	*second_last;
-	
+
 	if (!*b || !(*b)->next)
-		return;
+		return ;
 	last = *b;
 	second_last = NULL;
 	while (last->next)

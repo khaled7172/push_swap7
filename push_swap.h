@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/29 02:06:06 by kali             ###   ########.fr       */
+/*   Updated: 2026/01/30 02:09:16 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		*parse_numbers(char **argv, int start, int *count);
 int		is_valid_number(char *str);
 int		has_duplicates(int *arr, int size);
-t_node  *create_node(int value);
-void    add_node_back(t_node **head, t_node *new);
-t_node  *build_stack(int *numbers, int count);
-void    assign_ranks(t_node *stack, int size);
-void    sort_array(int *arr, int size);
-int     stack_size(t_node *stack);
-void    free_stack(t_node **stack);
+t_node	*create_node(int value);
+void	add_node_back(t_node **head, t_node *new);
+t_node	*build_stack(int *numbers, int count);
+void	assign_ranks(t_node *stack, int size);
+void	sort_array(int *arr, int size);
+int		stack_size(t_node *stack);
+void	free_stack(t_node **stack);
 int		count_numbers(char **av, int start);
 int		ft_atoi_safe(char *str, int *error);
 int		has_spaces(char *str);
