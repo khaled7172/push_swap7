@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 21:20:04 by kali              #+#    #+#             */
-/*   Updated: 2026/01/30 02:06:30 by khhammou         ###   ########.fr       */
+/*   Updated: 2026/02/01 00:30:22 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,4 @@ double	calculate_disorder(t_node *stack)
 		return (0.0);
 	return ((double)inversions / total_pairs);
 }
+

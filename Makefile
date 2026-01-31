@@ -9,6 +9,7 @@ SRCS = parsing/parse_flags.c \
        parsing/parsing_utils.c \
        parsing/validation.c \
        stack_utils/rank.c \
+	   stack_utils/op_utils.c \
        stack_utils/util.c \
        stack_utils/disorder.c \
        simple/sort_simple.c \
