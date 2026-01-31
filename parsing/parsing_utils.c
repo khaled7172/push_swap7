@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 02:11:49 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/30 02:11:55 by khhammou         ###   ########.fr       */
+/*   Updated: 2026/01/31 13:50:54 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	convert_digits(char *str, int start, int *error)
+static long	convert_digits(char *str, int start)
 {
 	long	result;
 	int		i;
@@ -21,11 +21,6 @@ static long	convert_digits(char *str, int start, int *error)
 	i = start;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (result > (INT_MAX - (str[i] - '0')) / 10)
-		{
-			*error = 1;
-			return (0);
-		}
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
@@ -48,7 +43,7 @@ int	ft_atoi_safe(char *str, int *error)
 	}
 	else if (str[i] == '+')
 		i++;
-	result = convert_digits(str, i, error);
+	result = convert_digits(str, i);
 	if (*error)
 		return (0);
 	result *= sign;
