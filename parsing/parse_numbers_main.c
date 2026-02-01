@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   parse_numbers_main.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmsaed <rmsaed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 02:14:33 by khhammou          #+#    #+#             */
-/*   Updated: 2026/01/30 02:14:39 by khhammou         ###   ########.fr       */
+/*   Created: 2026/02/01 19:19:09 by rmsaed            #+#    #+#             */
+/*   Updated: 2026/02/01 19:19:10 by rmsaed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 
