@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/02/01 10:41:18 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/01 21:52:48 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,5 +134,7 @@ void	print_number_fd(int n, int fd);
 void	print_disorder(double disorder);
 void	print_operations_part1(char *ops);
 void	print_operations_part2(char *ops);
+int		find_min_position(t_node *stack);
+void	rotate_to_top(t_node **stack, int pos, int size, char **ops);
 
 #endif

@@ -6,52 +6,16 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 02:05:23 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 10:21:00 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/01 21:56:43 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	find_min_position(t_node *stack)
+static void	sort_two(t_node **a, char **ops)
 {
-	t_node	*current;
-	int		min;
-	int		pos;
-	int		min_pos;
-
-	current = stack;
-	min = current->value;
-	pos = 0;
-	min_pos = 0;
-	while (current)
-	{
-		if (current->value < min)
-		{
-			min = current->value;
-			min_pos = pos;
-		}
-		current = current->next;
-		pos++;
-	}
-	return (min_pos);
-}
-
-void	rotate_to_top(t_node **stack, int pos, int size, char **ops)
-{
-	int	rotations;
-
-	if (pos <= size / 2)
-	{
-		rotations = pos;
-		while (rotations--)
-			ra(stack, ops);
-	}
-	else
-	{
-		rotations = size - pos;
-		while (rotations--)
-			rra(stack, ops);
-	}
+	if ((*a)->value > (*a)->next->value)
+		sa(a, ops);
 }
 
 static void	sort_three_values(t_node **a, t_values v, char **ops)
@@ -86,15 +50,11 @@ static void	sort_three(t_node **a, char **ops)
 	sort_three_values(a, v, ops);
 }
 
-void	sort_simple(t_node **a, t_node **b, char **ops)
+static void	sort_large(t_node **a, t_node **b, int size, char **ops)
 {
-	int	size;
 	int	min_pos;
 	int	pushed;
 
-	size = stack_size(*a);
-	if (is_sorted(*a))
-		return ;
 	pushed = 0;
 	while (size - pushed > 3)
 	{
@@ -106,4 +66,19 @@ void	sort_simple(t_node **a, t_node **b, char **ops)
 	sort_three(a, ops);
 	while (*b)
 		pa(a, b, ops);
+}
+
+void	sort_simple(t_node **a, t_node **b, char **ops)
+{
+	int	size;
+
+	size = stack_size(*a);
+	if (is_sorted(*a))
+		return ;
+	if (size == 2)
+		sort_two(a, ops);
+	else if (size == 3)
+		sort_three(a, ops);
+	else
+		sort_large(a, b, size, ops);
 }
