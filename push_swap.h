@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/02/01 10:27:13 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/01 10:41:18 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,14 @@ typedef struct s_chunk_info
 	int	chunk_num;
 	int	chunk_size;
 }	t_chunk_info;
+typedef struct s_sort_data
+{
+	t_node	**a;
+	t_node	**b;
+	t_flags	*flags;
+	double	disorder;
+	char	**ops;
+}	t_sort_data;
 
 /* Parsing & Validation */
 t_flags	parse_flags(int ac, char **av);
@@ -112,7 +120,7 @@ void	rrr(t_node **a, t_node **b, char **ops);
 void	sort_simple(t_node **a, t_node **b, char **ops);
 void	sort_medium(t_node **a, t_node **b, char **ops);
 void	sort_complex(t_node **a, t_node **b, char **ops);
-void	sort_adaptive(t_node **a, t_node **b, double disorder, char **ops);
+int		sort_adaptive(t_node **a, t_node **b, double disorder, char **ops);
 
 /* Rotation Helpers */
 void	rotate_to_top(t_node **stack, int pos, int size, char **ops);

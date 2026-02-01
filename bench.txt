@@ -1,0 +1,4 @@
+Disorder: 49.43%
+Strategy: complex / Complexity: O(n log n)
+Total operations: 6784
+sa: 0, sb: 0, ss: 0, pa: 2284, pb: 2284, ra: 2216, rb: 0, rr: 0, rra: 0, rrb: 0, rrr: 0
