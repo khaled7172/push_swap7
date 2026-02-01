@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 02:00:34 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 01:25:27 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/01 10:23:31 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,14 @@ static int	find_chunk_element(t_node *stack, int chunk_num, int chunk_size)
 	return (-1);
 }
 
-static void	push_chunk(t_node **a, t_node **b, int chunk_num, int chunk_size,
-				char **ops)
+static void	push_chunk(t_node **a, t_node **b, t_chunk_info c, char **ops)
 {
 	int	pos;
 	int	size;
 
 	while (1)
 	{
-		pos = find_chunk_element(*a, chunk_num, chunk_size);
+		pos = find_chunk_element(*a, c.chunk_num, c.chunk_size);
 		if (pos == -1)
 			break ;
 		size = stack_size(*a);
@@ -74,18 +73,19 @@ static void	push_back_sorted(t_node **a, t_node **b, char **ops)
 
 void	sort_medium(t_node **a, t_node **b, char **ops)
 {
-	int	size;
-	int	chunk_size;
-	int	num_chunks;
-	int	i;
+	int				size;
+	int				num_chunks;
+	int				i;
+	t_chunk_info	c;
 
 	size = stack_size(*a);
-	chunk_size = calculate_chunk_size(size);
-	num_chunks = (size + chunk_size - 1) / chunk_size;
+	c.chunk_size = calculate_chunk_size(size);
+	num_chunks = (size + c.chunk_size - 1) / c.chunk_size;
 	i = 0;
 	while (i < num_chunks)
 	{
-		push_chunk(a, b, i, chunk_size, ops);
+		c.chunk_num = i;
+		push_chunk(a, b, c, ops);
 		i++;
 	}
 	push_back_sorted(a, b, ops);

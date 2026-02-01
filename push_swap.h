@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/02/01 01:27:09 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/01 10:27:13 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,21 @@ typedef struct s_flags
 	t_strategy	strategy;
 	int			bench;
 	int			num_start;
+	double		disorder;
 }	t_flags;
+
+typedef struct s_values
+{
+	int	first;
+	int	second;
+	int	third;
+}	t_values;
+
+typedef struct s_chunk_info
+{
+	int	chunk_num;
+	int	chunk_size;
+}	t_chunk_info;
 
 /* Parsing & Validation */
 t_flags	parse_flags(int ac, char **av);
@@ -107,5 +121,10 @@ void	rotate_to_top_b(t_node **b, int pos, int size, char **ops);
 
 /* Benchmark */
 void	print_benchmark(double disorder, t_flags flags, char *ops);
+void	print_to_stderr(char *str);
+void	print_number_fd(int n, int fd);
+void	print_disorder(double disorder);
+void	print_operations_part1(char *ops);
+void	print_operations_part2(char *ops);
 
 #endif

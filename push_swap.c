@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 00:43:52 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 01:20:58 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/01 01:30:08 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,16 @@ static void	init_stacks(char **argv, t_flags flags, t_node **a, t_node **b)
 	assign_ranks(*a, count);
 }
 
-static void	execute_sort(t_node **a, t_node **b, t_flags flags,
-	double disorder, char **ops)
+static void	execute_sort(t_node **a, t_node **b, t_flags *f, char **ops)
 {
-	if (flags.strategy == SIMPLE)
+	if (f->strategy == SIMPLE)
 		sort_simple(a, b, ops);
-	else if (flags.strategy == MEDIUM)
+	else if (f->strategy == MEDIUM)
 		sort_medium(a, b, ops);
-	else if (flags.strategy == COMPLEX)
+	else if (f->strategy == COMPLEX)
 		sort_complex(a, b, ops);
 	else
-		sort_adaptive(a, b, disorder, ops);
+		sort_adaptive(a, b, f->disorder, ops);
 }
 
 int	main(int argc, char **argv)
@@ -42,7 +41,6 @@ int	main(int argc, char **argv)
 	t_flags	flags;
 	t_node	*stack_a;
 	t_node	*stack_b;
-	double	disorder;
 	char	*ops;
 
 	if (argc < 2)
@@ -51,11 +49,11 @@ int	main(int argc, char **argv)
 	if (flags.num_start >= argc)
 		return (0);
 	init_stacks(argv, flags, &stack_a, &stack_b);
-	disorder = calculate_disorder(stack_a);
+	flags.disorder = calculate_disorder(stack_a);
 	ops = NULL;
-	execute_sort(&stack_a, &stack_b, flags, disorder, &ops);
+	execute_sort(&stack_a, &stack_b, &flags, &ops);
 	if (flags.bench)
-		print_benchmark(disorder, flags, ops);
+		print_benchmark(flags.disorder, flags, ops);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	if (ops)

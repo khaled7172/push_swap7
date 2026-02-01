@@ -6,27 +6,18 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 00:00:00 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 01:21:41 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/01 01:32:48 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_strjoin_free(char *s1, char *s2)
+static char	*join_strings(char *s1, char *s2)
 {
 	char	*result;
 	int		i;
 	int		j;
 
-	if (!s1)
-	{
-		s1 = malloc(1);
-		if (!s1)
-			return (NULL);
-		s1[0] = '\0';
-	}
-	if (!s2)
-		return (s1);
 	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!result)
 	{
@@ -45,6 +36,20 @@ char	*ft_strjoin_free(char *s1, char *s2)
 	result[i] = '\0';
 	free(s1);
 	return (result);
+}
+
+char	*ft_strjoin_free(char *s1, char *s2)
+{
+	if (!s1)
+	{
+		s1 = malloc(1);
+		if (!s1)
+			return (NULL);
+		s1[0] = '\0';
+	}
+	if (!s2)
+		return (s1);
+	return (join_strings(s1, s2));
 }
 
 int	total_ops(char *ops)

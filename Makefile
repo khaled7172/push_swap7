@@ -21,6 +21,7 @@ SRCS = parsing/parse_flags.c \
        medium/sort_medium.c \
        complex/sort_complex.c \
        bench/benchmark.c \
+	   bench/benchmark_utils.c \
        adaptive.c \
        push_swap.c
 OBJS = $(SRCS:.c=.o)
