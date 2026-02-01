@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 21:20:04 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 01:21:47 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/01 21:01:17 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ double	calculate_disorder(t_node *stack)
 	int		total_pairs;
 
 	inversions = 0;
-	total_pairs = 0;
+	total_pairs = stack_size(stack) * (stack_size(stack) - 1) / 2;
 	current = stack;
 	while (current)
 	{
 		runner = current->next;
 		while (runner)
 		{
-			total_pairs++;
 			if (current->value > runner->value)
 				inversions++;
 			runner = runner->next;
