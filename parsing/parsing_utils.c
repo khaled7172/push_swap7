@@ -3,24 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmsaed <rmsaed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 19:19:26 by rmsaed            #+#    #+#             */
-/*   Updated: 2026/02/01 19:19:27 by rmsaed           ###   ########.fr       */
+/*   Updated: 2026/02/03 11:32:57 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	convert_digits(char *str, int start)
+static long	convert_digits(char *str, int start, int *error, int sign)
 {
 	long	result;
+	long	max_allowed;
 	int		i;
 
 	result = 0;
 	i = start;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if (sign == -1)
+			max_allowed = (long)INT_MAX + 1;
+		else
+			max_allowed = INT_MAX;
+		if (result > (max_allowed - (str[i] - '0')) / 10)
+		{
+			*error = 1;
+			return (0);
+		}
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
@@ -43,7 +53,7 @@ int	ft_atoi_safe(char *str, int *error)
 	}
 	else if (str[i] == '+')
 		i++;
-	result = convert_digits(str, i);
+	result = convert_digits(str, i, error, sign);
 	if (*error)
 		return (0);
 	result *= sign;

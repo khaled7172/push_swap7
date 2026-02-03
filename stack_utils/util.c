@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:43:07 by kali              #+#    #+#             */
-/*   Updated: 2026/01/30 02:07:47 by khhammou         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:50:56 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ t_node	*build_stack(int *numbers, int count)
 	t_node	*new_node;
 	int		i;
 
+	if (!numbers || count <= 0)
+		return (NULL);
 	stack = NULL;
 	i = 0;
 	while (i < count)
