@@ -3,11 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: khhammou <khhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/01 19:18:59 by rmsaed            #+#    #+#             */
-/*   Updated: 2026/02/03 10:30:45 by kali             ###   ########.fr       */
->>>>>>> e9064fe (modified code erroring on int max and int min values which are valid and optimized order calculation to get list size one time instead of iterating it twice, added check when building the stack that checks if the array passed was empty or if the nb of integers was less than or equal to zero to return NULL)
+/*   Created: 2026/02/03 19:14:18 by khhammou          #+#    #+#             */
+/*   Updated: 2026/02/03 19:14:19 by khhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
