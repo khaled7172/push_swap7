@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 01:59:02 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 01:25:16 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/04 10:22:22 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,23 @@ int	calculate_chunk_size(int size)
 
 int	find_max_position(t_node *stack)
 {
-	t_node	*current;
 	int		max;
 	int		pos;
 	int		max_pos;
 
-	current = stack;
-	max = current->value;
+	if (!stack)
+		return (-1);
+	max = stack->value;
 	pos = 0;
 	max_pos = 0;
-	while (current)
+	while (stack)
 	{
-		if (current->value > max)
+		if (stack->value > max)
 		{
-			max = current->value;
+			max = stack->value;
 			max_pos = pos;
 		}
-		current = current->next;
+		stack = stack->next;
 		pos++;
 	}
 	return (max_pos);

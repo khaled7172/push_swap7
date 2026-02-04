@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmsaed <rmsaed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 19:19:32 by rmsaed            #+#    #+#             */
-/*   Updated: 2026/02/01 19:19:35 by rmsaed           ###   ########.fr       */
+/*   Updated: 2026/02/04 10:18:17 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,15 @@ void	free_split(char **split)
 int	count_numbers(char **av, int start)
 {
 	int		total;
-	int		i;
 	char	**pieces;
 	int		j;
 
 	total = 0;
-	i = start;
-	while (av[i])
+	while (av[start])
 	{
-		if (has_spaces(av[i]))
+		if (has_spaces(av[start]))
 		{
-			pieces = ft_split(av[i], ' ');
+			pieces = ft_split(av[start], ' ');
 			j = 0;
 			while (pieces[j++])
 				total++;
@@ -100,7 +98,7 @@ int	count_numbers(char **av, int start)
 		}
 		else
 			total++;
-		i++;
+		start++;
 	}
 	return (total);
 }

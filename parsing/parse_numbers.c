@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmsaed <rmsaed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 19:19:15 by rmsaed            #+#    #+#             */
-/*   Updated: 2026/02/01 19:19:21 by rmsaed           ###   ########.fr       */
+/*   Updated: 2026/02/04 10:19:40 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,15 @@ static void	process_single_arg(char *arg, int *numbers, int *index)
 
 void	fill_numbers(char **av, int start, int *numbers)
 {
-	int	arg_idx;
 	int	index;
 
-	arg_idx = start;
 	index = 0;
-	while (av[arg_idx])
+	while (av[start])
 	{
-		if (has_spaces(av[arg_idx]))
-			process_split_arg(av[arg_idx], numbers, &index);
+		if (has_spaces(av[start]))
+			process_split_arg(av[start], numbers, &index);
 		else
-			process_single_arg(av[arg_idx], numbers, &index);
-		arg_idx++;
+			process_single_arg(av[start], numbers, &index);
+		start++;
 	}
 }

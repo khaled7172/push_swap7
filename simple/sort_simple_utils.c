@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 03:55:54 by kali              #+#    #+#             */
-/*   Updated: 2026/02/02 01:41:00 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/04 10:21:25 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,23 @@ int	is_sorted(t_node *stack)
 
 int	find_min_position(t_node *stack)
 {
-	t_node	*current;
 	int		min;
 	int		pos;
 	int		min_pos;
 
-	current = stack;
-	min = current->value;
+	if (!stack)
+		return (-1);
+	min = stack->value;
 	pos = 0;
 	min_pos = 0;
-	while (current)
+	while (stack)
 	{
-		if (current->value < min)
+		if (stack->value < min)
 		{
-			min = current->value;
+			min = stack->value;
 			min_pos = pos;
 		}
-		current = current->next;
+		stack = stack->next;
 		pos++;
 	}
 	return (min_pos);
