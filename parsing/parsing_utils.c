@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 19:19:26 by rmsaed            #+#    #+#             */
-/*   Updated: 2026/02/04 10:28:40 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/04 10:48:21 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,5 @@ int	ft_atoi_safe(char *str, int *error)
 	if (*error)
 		return (0);
 	result *= sign;
-	if (result > INT_MAX || result < INT_MIN)
-		*error = 1;
 	return ((int)result);
 }
