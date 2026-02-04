@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 19:19:26 by rmsaed            #+#    #+#             */
-/*   Updated: 2026/02/03 11:32:57 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/04 10:28:40 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,21 @@ static long	convert_digits(char *str, int start, int *error, int sign)
 {
 	long	result;
 	long	max_allowed;
-	int		i;
 
 	result = 0;
-	i = start;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[start] >= '0' && str[start] <= '9')
 	{
 		if (sign == -1)
 			max_allowed = (long)INT_MAX + 1;
 		else
 			max_allowed = INT_MAX;
-		if (result > (max_allowed - (str[i] - '0')) / 10)
+		if (result > (max_allowed - (str[start] - '0')) / 10)
 		{
 			*error = 1;
 			return (0);
 		}
-		result = result * 10 + (str[i] - '0');
-		i++;
+		result = result * 10 + (str[start] - '0');
+		start++;
 	}
 	return (result);
 }
