@@ -6,13 +6,13 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 00:43:37 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 01:24:26 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/06 20:57:39 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate_stack(t_node **stack)
+void	rotate_stack(t_node **stack)
 {
 	t_node	*first;
 	t_node	*last;
@@ -28,7 +28,7 @@ static void	rotate_stack(t_node **stack)
 	last->next = first;
 }
 
-static void	reverse_rotate_stack(t_node **stack)
+void	reverse_rotate_stack(t_node **stack)
 {
 	t_node	*last;
 	t_node	*second_last;

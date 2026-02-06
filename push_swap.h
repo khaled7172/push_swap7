@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmsaed <rmsaed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/02/01 22:15:08 by rmsaed           ###   ########.fr       */
+/*   Updated: 2026/02/06 20:57:01 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,5 +136,9 @@ void	print_operations_part1(char *ops);
 void	print_operations_part2(char *ops);
 int		find_min_position(t_node *stack);
 void	rotate_to_top(t_node **stack, int pos, int size, char **ops);
+/* Internal operation helpers */
+void	swap_stack(t_node **stack);
+void	rotate_stack(t_node **stack);
+void	reverse_rotate_stack(t_node **stack);
 
 #endif

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/01 00:43:15 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 01:23:56 by kali             ###   ########.fr       */
+/*   Created: 2026/02/06 20:43:19 by kali              #+#    #+#             */
+/*   Updated: 2026/02/06 20:57:23 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap_stack(t_node **stack)
+void	swap_stack(t_node **stack)
 {
 	t_node	*first;
 	t_node	*second;
@@ -28,16 +28,7 @@ static void	swap_stack(t_node **stack)
 
 void	sa(t_node **a, char **ops)
 {
-	t_node	*first;
-	t_node	*second;
-
-	if (!*a || !(*a)->next)
-		return ;
-	first = *a;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*a = second;
+	swap_stack(a);
 	ft_printf("sa\n");
 	if (ops)
 		*ops = ft_strjoin_free(*ops, "sa\n");
@@ -45,16 +36,7 @@ void	sa(t_node **a, char **ops)
 
 void	sb(t_node **b, char **ops)
 {
-	t_node	*first;
-	t_node	*second;
-
-	if (!*b || !(*b)->next)
-		return ;
-	first = *b;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*b = second;
+	swap_stack(b);
 	ft_printf("sb\n");
 	if (ops)
 		*ops = ft_strjoin_free(*ops, "sb\n");
