@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   benchmark_utils.c                                  :+:      :+:    :+:   */
+/*   bench_help.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/01 10:26:38 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 10:26:45 by kali             ###   ########.fr       */
+/*   Created: 2026/02/06 21:07:03 by kali              #+#    #+#             */
+/*   Updated: 2026/02/06 21:07:17 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,47 +28,39 @@ void	print_number_fd(int n, int fd)
 
 void	print_disorder(double disorder)
 {
-	int	whole;
-	int	frac;
+	int	percentage;
 
-	whole = (int)(disorder * 100);
-	frac = (int)((disorder * 100 - whole) * 100);
+	percentage = (int)(disorder * 10000);
 	print_to_stderr("Disorder: ");
-	print_number_fd(whole, 2);
+	print_number_fd(percentage / 100, 2);
 	print_to_stderr(".");
-	if (frac < 10)
+	if ((percentage % 100) < 10)
 		print_to_stderr("0");
-	print_number_fd(frac, 2);
+	print_number_fd(percentage % 100, 2);
 	print_to_stderr("%\n");
 }
 
-void	print_operations_part1(char *ops)
+static void	print_op(char *ops, char *name, int first)
 {
-	print_to_stderr("sa: ");
-	print_number_fd(c_op(ops, "sa"), 2);
-	print_to_stderr(", sb: ");
-	print_number_fd(c_op(ops, "sb"), 2);
-	print_to_stderr(", ss: ");
-	print_number_fd(c_op(ops, "ss"), 2);
-	print_to_stderr(", pa: ");
-	print_number_fd(c_op(ops, "pa"), 2);
-	print_to_stderr(", pb: ");
-	print_number_fd(c_op(ops, "pb"), 2);
-	print_to_stderr(", ra: ");
-	print_number_fd(c_op(ops, "ra"), 2);
+	if (!first)
+		print_to_stderr(", ");
+	print_to_stderr(name);
+	print_to_stderr(": ");
+	print_number_fd(c_op(ops, name), 2);
 }
 
-void	print_operations_part2(char *ops)
+void	print_all_operations(char *ops)
 {
-	print_to_stderr(", rb: ");
-	print_number_fd(c_op(ops, "rb"), 2);
-	print_to_stderr(", rr: ");
-	print_number_fd(c_op(ops, "rr"), 2);
-	print_to_stderr(", rra: ");
-	print_number_fd(c_op(ops, "rra"), 2);
-	print_to_stderr(", rrb: ");
-	print_number_fd(c_op(ops, "rrb"), 2);
-	print_to_stderr(", rrr: ");
-	print_number_fd(c_op(ops, "rrr"), 2);
+	print_op(ops, "sa", 1);
+	print_op(ops, "sb", 0);
+	print_op(ops, "ss", 0);
+	print_op(ops, "pa", 0);
+	print_op(ops, "pb", 0);
+	print_op(ops, "ra", 0);
+	print_op(ops, "rb", 0);
+	print_op(ops, "rr", 0);
+	print_op(ops, "rra", 0);
+	print_op(ops, "rrb", 0);
+	print_op(ops, "rrr", 0);
 	print_to_stderr("\n");
 }

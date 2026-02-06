@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/02/06 20:57:01 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/06 21:11:01 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strjoin_free(char *s1, char *s2);
 int		total_ops(char *ops);
 int		c_op(char *ops, char *op_name);
+void	print_all_operations(char *ops);
 
 /* Checker (no print operations) */
 void	swap_no_print(t_node **stack);

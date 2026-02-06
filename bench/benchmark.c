@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 20:18:50 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 10:26:23 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/06 21:10:18 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ void	print_benchmark(double disorder, t_flags flags, char *ops)
 	print_to_stderr("Total operations: ");
 	print_number_fd(total_ops(ops), 2);
 	print_to_stderr("\n");
-	print_operations_part1(ops);
-	print_operations_part2(ops);
+	print_all_operations(ops);
 }
