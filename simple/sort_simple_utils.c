@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 03:55:54 by kali              #+#    #+#             */
-/*   Updated: 2026/02/06 21:05:45 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/06 21:21:34 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,4 @@ void	rotate_to_top_a(t_node **a, int pos, int size, char **ops)
 		while (rotations--)
 			rra(a, ops);
 	}
-}
-
-void	rotate_to_top(t_node **stack, int pos, int size, char **ops)
-{
-	rotate_to_top_a(stack, pos, size, ops);
 }

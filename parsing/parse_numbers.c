@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 19:19:15 by rmsaed            #+#    #+#             */
-/*   Updated: 2026/02/04 10:19:40 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/06 21:28:32 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	fill_numbers(char **av, int start, int *numbers)
 	index = 0;
 	while (av[start])
 	{
-		if (has_spaces(av[start]))
+		if (ft_strchr(av[start], ' '))
 			process_split_arg(av[start], numbers, &index);
 		else
 			process_single_arg(av[start], numbers, &index);

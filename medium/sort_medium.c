@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 02:00:34 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 10:23:31 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/06 21:22:19 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	push_chunk(t_node **a, t_node **b, t_chunk_info c, char **ops)
 		if (pos == -1)
 			break ;
 		size = stack_size(*a);
-		rotate_to_top(a, pos, size, ops);
+		rotate_to_top_a(a, pos, size, ops);
 		pb(a, b, ops);
 	}
 }

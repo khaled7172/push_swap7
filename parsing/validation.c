@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 19:19:32 by rmsaed            #+#    #+#             */
-/*   Updated: 2026/02/04 10:18:17 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/06 21:28:06 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,6 @@ int	has_duplicates(int *arr, int size)
 	return (0);
 }
 
-int	has_spaces(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == ' ')
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 void	free_split(char **split)
 {
 	int	i;
@@ -88,7 +74,7 @@ int	count_numbers(char **av, int start)
 	total = 0;
 	while (av[start])
 	{
-		if (has_spaces(av[start]))
+		if (ft_strchr(av[start], ' '))
 		{
 			pieces = ft_split(av[start], ' ');
 			j = 0;

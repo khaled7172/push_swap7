@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 12:40:24 by khhammou          #+#    #+#             */
-/*   Updated: 2026/02/06 21:11:01 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/06 21:28:46 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void	fill_numbers(char **av, int start, int *numbers);
 int		ft_atoi_safe(char *str, int *error);
 int		is_valid_number(char *str);
 int		has_duplicates(int *arr, int size);
-int		has_spaces(char *str);
 int		count_numbers(char **av, int start);
 int		check_flag(char *str);
 
