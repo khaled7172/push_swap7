@@ -15,8 +15,8 @@ SRCS = parsing/parse_flags.c \
        simple/sort_simple.c \
 	   simple/sort_simple_utils.c \
        operations/operations.c \
-       operations/reverse_operations.c \
-       operations/stack_helpers.c \
+       operations/rotate_operations.c \
+	   operations/reverse_rotate_operations.c \
        medium/medium_utils.c \
        medium/sort_medium.c \
        complex/sort_complex.c \
