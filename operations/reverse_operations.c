@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 20:55:02 by kali              #+#    #+#             */
-/*   Updated: 2026/02/06 20:56:17 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/07 20:29:06 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,22 @@ void	pb(t_node **a, t_node **b, char **ops)
 		*ops = ft_strjoin_free(*ops, "pb\n");
 }
 
+void	rotate_stack(t_node **stack)
+{
+	t_node	*first;
+	t_node	*last;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	first = *stack;
+	last = *stack;
+	while (last->next)
+		last = last->next;
+	*stack = first->next;
+	first->next = NULL;
+	last->next = first;
+}
+
 void	ra(t_node **a, char **ops)
 {
 	rotate_stack(a);
@@ -43,18 +59,11 @@ void	rb(t_node **b, char **ops)
 		*ops = ft_strjoin_free(*ops, "rb\n");
 }
 
-void	rra(t_node **a, char **ops)
+void	rr(t_node **a, t_node **b, char **ops)
 {
-	reverse_rotate_stack(a);
-	ft_printf("rra\n");
+	rotate_stack(a);
+	rotate_stack(b);
+	ft_printf("rr\n");
 	if (ops)
-		*ops = ft_strjoin_free(*ops, "rra\n");
-}
-
-void	rrb(t_node **b, char **ops)
-{
-	reverse_rotate_stack(b);
-	ft_printf("rrb\n");
-	if (ops)
-		*ops = ft_strjoin_free(*ops, "rrb\n");
+		*ops = ft_strjoin_free(*ops, "rr\n");
 }

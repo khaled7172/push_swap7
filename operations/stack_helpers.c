@@ -6,27 +6,11 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 00:43:37 by kali              #+#    #+#             */
-/*   Updated: 2026/02/06 20:57:39 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/07 20:28:53 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	rotate_stack(t_node **stack)
-{
-	t_node	*first;
-	t_node	*last;
-
-	if (!*stack || !(*stack)->next)
-		return ;
-	first = *stack;
-	last = *stack;
-	while (last->next)
-		last = last->next;
-	*stack = first->next;
-	first->next = NULL;
-	last->next = first;
-}
 
 void	reverse_rotate_stack(t_node **stack)
 {
@@ -47,13 +31,20 @@ void	reverse_rotate_stack(t_node **stack)
 	*stack = last;
 }
 
-void	rr(t_node **a, t_node **b, char **ops)
+void	rra(t_node **a, char **ops)
 {
-	rotate_stack(a);
-	rotate_stack(b);
-	ft_printf("rr\n");
+	reverse_rotate_stack(a);
+	ft_printf("rra\n");
 	if (ops)
-		*ops = ft_strjoin_free(*ops, "rr\n");
+		*ops = ft_strjoin_free(*ops, "rra\n");
+}
+
+void	rrb(t_node **b, char **ops)
+{
+	reverse_rotate_stack(b);
+	ft_printf("rrb\n");
+	if (ops)
+		*ops = ft_strjoin_free(*ops, "rrb\n");
 }
 
 void	rrr(t_node **a, t_node **b, char **ops)
