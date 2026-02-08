@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptive.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmsaed <rmsaed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 20:17:37 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 20:55:01 by rmsaed           ###   ########.fr       */
+/*   Updated: 2026/02/08 21:45:40 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	sort_adaptive(t_node **a, t_node **b, double disorder, char **ops)
 	int	size;
 
 	size = stack_size(*a);
-	if (size <= 5)
+	if (size <= 5 || disorder < 0.2)
 	{
 		sort_simple(a, b, ops);
 		return (SIMPLE);
