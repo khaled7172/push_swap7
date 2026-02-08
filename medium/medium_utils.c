@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 01:59:02 by kali              #+#    #+#             */
-/*   Updated: 2026/02/04 10:22:22 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/08 11:02:30 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	calculate_chunk_size(int size)
 	while (i * i < size)
 		i++;
 	chunk_size = i;
-	if (chunk_size < 1)
-		chunk_size = 1;
 	return (chunk_size);
 }
 
