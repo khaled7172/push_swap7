@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rmsaed <rmsaed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 02:05:23 by kali              #+#    #+#             */
-/*   Updated: 2026/02/01 21:56:43 by kali             ###   ########.fr       */
+/*   Updated: 2026/02/11 22:51:01 by rmsaed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	sort_two(t_node **a, char **ops)
-{
-	if ((*a)->value > (*a)->next->value)
-		sa(a, ops);
-}
 
 static void	sort_three_values(t_node **a, t_values v, char **ops)
 {
@@ -76,7 +70,7 @@ void	sort_simple(t_node **a, t_node **b, char **ops)
 	if (is_sorted(*a))
 		return ;
 	if (size == 2)
-		sort_two(a, ops);
+		sa(a, ops);
 	else if (size == 3)
 		sort_three(a, ops);
 	else
