@@ -6,7 +6,7 @@
 /*   By: rmsaed <rmsaed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 02:05:23 by kali              #+#    #+#             */
-/*   Updated: 2026/02/11 22:51:01 by rmsaed           ###   ########.fr       */
+/*   Updated: 2026/02/11 22:59:42 by rmsaed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ static void	sort_three(t_node **a, char **ops)
 {
 	t_values	v;
 
-	if (stack_size(*a) != 3)
-		return ;
 	v.first = (*a)->value;
 	v.second = (*a)->next->value;
 	v.third = (*a)->next->next->value;
